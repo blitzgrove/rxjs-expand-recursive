@@ -3,7 +3,7 @@ import { of, delay, Observable, expand, reduce, takeWhile, tap } from 'rxjs';
 const items$ = fetch().pipe(
   expand(response => fetch(response.cursor)),
   takeWhile(response => !!response.cursor, true),
-  reduce((all, {data}) => all.concat(data), [])
+  reduce((all, {data}) => all.concat(data), [] as number[])
 );
 
 items$.subscribe(
@@ -20,7 +20,7 @@ function fetch(cursor = 0): Observable<Response> {
   const n = cursor * PER_PAGE + 1;
   const response = {
     data: [n, n+1, n+2],
-    cursor: cursor < 3 ? cursor+1 : undefined
+    cursor: cursor < 3 ? cursor+1 : 0
   };
 
   return of(response).pipe(delay(1250), tap(r => console.log(`> fetch(${cursor})`, r)));
