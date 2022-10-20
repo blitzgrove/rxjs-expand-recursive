@@ -1,7 +1,7 @@
 {
-  "name": "rxjs",
-  "version": "0.0.0",
-  "private": true,
+  "name": "rxjs-recursive-expand-operator",
+  "version": "0.0.1",
+  "private": false,
   "dependencies": {
     "rxjs": "^7.5.5"
   }
