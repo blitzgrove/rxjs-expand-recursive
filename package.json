@@ -1,8 +1,14 @@
 {
   "name": "rxjs-recursive-expand-operator",
   "version": "0.0.1",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "private": false,
   "dependencies": {
-    "rxjs": "^7.5.5"
+    "rxjs": "^7.5.5",
+    "vite": "^3.1.8"
   }
 }
